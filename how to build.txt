@@ -1,0 +1,29 @@
+Instructions on how to build the game with Visual C++ 2015 and SFML 2.4.0 linked statically.
+
+First, you need to download SFML:
+http://www.sfml-dev.org/download/sfml/2.4.0/
+
+Project Properties
+
+    C/C++
+
+        1. General / Additional Include Directories - specify sfml's include directory
+        2. Preprocessor / Preprocessor Definitions - append with: SFML_STATIC
+        
+    Linker
+    
+        3. General / Additional Library Directories - specify sfml's lib directory
+        4. Input / Additional Dependecies     
+        
+            For DEBUG append with:
+                sfml-audio-s-d.lib; sfml-graphics-s-d.lib; sfml-network-s-d.lib; sfml-system-s-d.lib; sfml-window-s-d.lib;
+                flac.lib; freetype.lib; jpeg.lib; ogg.lib; openal32.lib; vorbis.lib; vorbisenc.lib; vorbisfile.lib;
+                gdi32.lib; opengl32.lib; winmm.lib; ws2_32.lib;
+                
+            For RELEASE append with:
+                sfml-audio-s.lib; sfml-graphics-s.lib; sfml-network-s.lib; sfml-system-s.lib; sfml-window-s.lib;
+                flac.lib; freetype.lib; jpeg.lib; ogg.lib; openal32.lib; vorbis.lib; vorbisenc.lib; vorbisfile.lib;
+                gdi32.lib; opengl32.lib; winmm.lib; ws2_32.lib;
+                
+        5. System / Subsystem
+        6. Advanced / Entry Point - mainCRTStartup
